@@ -1,4 +1,3 @@
-<include a CircleCI status badge, here>
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/cunhuvan/UdacityCloudDevopsP4/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/cunhuvan/UdacityCloudDevopsP4/tree/main)
 ## Project Overview
 
