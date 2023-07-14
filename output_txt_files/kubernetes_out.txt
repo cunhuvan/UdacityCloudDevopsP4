@@ -1,12 +1,12 @@
 <paste log output from Kubernetes-mediated prediction, here>
-(.devops) ubuntu@ip-172-31-29-132:~/UdacityCloudDevopsP4/DevOps_Microservices-master/project-ml-microservice-kubernetes$ ./run_kubernetes.sh
+(.devops) ubuntu@ip-172-31-29-132:~/UdacityCloudDevopsP4$ ./run_kubernetes.sh
 Error from server (AlreadyExists): pods "microservice" already exists
-NAME           READY   STATUS    RESTARTS        AGE
-microservice   1/1     Running   3 (5m26s ago)   22m
+NAME           READY   STATUS    RESTARTS      AGE
+microservice   1/1     Running   4 (63s ago)   68m
 Forwarding from 127.0.0.1:8000 -> 80
 Forwarding from [::1]:8000 -> 80
 
-(.devops) ubuntu@ip-172-31-29-132:~/UdacityCloudDevopsP4/DevOps_Microservices-master/project-ml-microservice-kubernetes$ ./make_prediction.sh
+ubuntu@ip-172-31-29-132:~/UdacityCloudDevopsP4$ ./make_prediction.sh
 Port: 8000
 {
   "prediction": [
@@ -14,7 +14,7 @@ Port: 8000
   ]
 }
 
-(.devops) ubuntu@ip-172-31-29-132:~/UdacityCloudDevopsP4/DevOps_Microservices-master/project-ml-microservice-kubernetes$ kubectl logs microservice
+(.devops) ubuntu@ip-172-31-29-132:~/UdacityCloudDevopsP4$ kubectl logs microservice
  * Serving Flask app "app" (lazy loading)
  * Environment: production
    WARNING: Do not use the development server in a production environment.
@@ -23,14 +23,14 @@ Port: 8000
  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
  * Restarting with stat
  * Debugger is active!
- * Debugger PIN: 132-019-924
-[2023-07-14 08:56:58,982] INFO in app: JSON payload: 
+ * Debugger PIN: 220-958-962
+[2023-07-14 09:35:57,070] INFO in app: JSON payload: 
 {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
-[2023-07-14 08:56:59,007] INFO in app: Inference payload DataFrame: 
+[2023-07-14 09:35:57,094] INFO in app: Inference payload DataFrame: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2023-07-14 08:56:59,016] INFO in app: Scaling Payload: 
+[2023-07-14 09:35:57,110] INFO in app: Scaling Payload: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2023-07-14 08:56:59,020] INFO in app: This is prediction: [20.35373177134412]
-127.0.0.1 - - [14/Jul/2023 08:56:59] "POST /predict HTTP/1.1" 200 -
+[2023-07-14 09:35:57,115] INFO in app: This is prediction: [20.35373177134412]
+127.0.0.1 - - [14/Jul/2023 09:35:57] "POST /predict HTTP/1.1" 200 -
